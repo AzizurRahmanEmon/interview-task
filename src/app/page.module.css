@@ -1,6 +1,7 @@
 .image_gallery_container {
-  display: grid;
-  width: 980px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
   height: auto;
   margin: 50px auto;
   justify-content: center;
@@ -9,5 +10,9 @@
   border-radius: 15px;
 }
 
-
-
+@media screen and (max-width: 1399px) {
+  .image_gallery_container {
+    width: 80%;
+    padding: 20px 30px;
+  }
+}
