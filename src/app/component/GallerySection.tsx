@@ -12,8 +12,7 @@ interface ItemProps {
 const GallerySection = () => {
   const [state, setState] = useState<ItemProps[]>(imageList);
   const [itemSelected, setItemSelected] = useState<number[]>([]);
-  const [clearSelection, setClearSelection] = useState(false); // Added clearSelection state
-
+  const [clearSelection, setClearSelection] = useState(false);
   const addImage = (imgSrc: string) => {
     const newItem = {
       id: state.length,
@@ -70,7 +69,7 @@ const GallerySection = () => {
               <input
                 type="checkbox"
                 id="clear-selection"
-                checked={clearSelection}
+                checked={itemSelected.length >= 1}
                 onChange={handleClearSelection}
               />
               <p>{`${itemSelected.length} ${
