@@ -1,0 +1,90 @@
+.grid_item {
+  position: relative;
+  cursor: pointer;
+}
+
+.single_img_container {
+  height: 100%;
+  width: 100%;
+}
+
+.single_img_container img {
+  height: 100%;
+  width: 100%;
+}
+
+.add_image_container {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border: 2px dashed #ddd;
+  border-radius: 15px;
+  user-select: none;
+  pointer-events: none;
+  cursor: default;
+}
+.add_image_container img {
+  height: 50px;
+  width: 50px;
+}
+
+.add_image_container h3 {
+  font-size: 15px;
+}
+
+.add_image_container input {
+  opacity: 0;
+  position: absolute;
+  pointer-events: auto;
+}
+
+.grid_input_container {
+  transition: 0.3s;
+  opacity: 0;
+  background-color: #00000063;
+  cursor: move;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.grid_input_container:hover {
+  opacity: 0.5;
+}
+
+.grid_input_container input {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 20px;
+  padding: 20px 0;
+}
+
+.grid_container div:first-child {
+  grid-column: auto / span 2;
+  grid-row: auto / span 2;
+}
+
+.grid_container>div {
+  border: 1px solid rgb(159, 154, 154);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.header_container {
+  border-bottom: 3px solid #ddd;
+}
