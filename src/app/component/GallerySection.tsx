@@ -69,7 +69,7 @@ const GallerySection = () => {
               <input
                 type="checkbox"
                 id="clear-selection"
-                checked={itemSelected.length >= 1}
+                defaultChecked={clearSelection}
                 onChange={handleClearSelection}
               />
               <p>{`${itemSelected.length} ${
@@ -100,13 +100,14 @@ const GallerySection = () => {
                 className={`${styles.grid_input_container} ${
                   itemSelected.includes(item.id) ? styles.selected_item : ""
                 }`}
-                onClick={() => toggleSelection(item.id)}
               >
                 <input
                   type="checkbox"
                   name="checkbox"
                   id={item.id.toString()}
-                  checked={itemSelected.includes(item.id)}
+                  defaultChecked={itemSelected.includes(item.id)}
+                  onChange={() => toggleSelection(item.id)}
+                  readOnly
                 />
               </div>
             </div>
@@ -115,7 +116,12 @@ const GallerySection = () => {
         <label htmlFor="file-input" className={styles.add_image_container}>
           <img src="/images/add-photo-icon.png" alt="icon" />
           <h3>Add Photo</h3>
-          <input type="file" id="file-input" onChange={handleImageUpload} />
+          <input
+            type="file"
+            id="file-input"
+            onChange={handleImageUpload}
+            readOnly
+          />
         </label>
       </ReactSortable>
     </>
